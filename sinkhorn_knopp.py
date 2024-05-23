@@ -1,5 +1,5 @@
-import torch
 import numpy as np
+import torch
 
 
 def shoot_infs(inp_tensor):
@@ -40,7 +40,7 @@ class SinkhornKnopp(torch.nn.Module):
 
         B = Q.shape[2]
         K = Q.shape[1]
-        
+
         for it in range(self.num_iters):
             # normalize each row: total weight per prototype must be 1/K
             sum_of_rows = torch.sum(Q, dim=2, keepdim=True)
